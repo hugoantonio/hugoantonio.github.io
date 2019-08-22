@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { BoldCurrencyPipe } from './pipes/BoldCurrencyPipe';
 
 @NgModule({
@@ -6,4 +6,11 @@ import { BoldCurrencyPipe } from './pipes/BoldCurrencyPipe';
     declarations: [BoldCurrencyPipe],
     exports: [BoldCurrencyPipe]
 })
-export class SharedModule {}
+export class SharedModule {
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: SharedModule,
+            providers: []
+        };
+    }
+}
