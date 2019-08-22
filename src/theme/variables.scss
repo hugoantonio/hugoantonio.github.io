@@ -75,3 +75,37 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap');
+
+@font-face {
+  font-family: galano;
+  font-weight: bold;
+  src: url("../assets/fonts/galano_grotesque.otf") format("opentype");
+}
+
+.neon-handle {
+  display: flex;
+  margin: 10px auto 0 auto;
+  max-width: 50px;
+  border: 2px solid rgb(167, 167, 167);
+  border-radius: 1px;
+}
+
+.neon-separator {
+  display: block;
+  width: 100%;
+  height: 10px;
+  border-top: 1px solid rgba(51, 51, 51, 0.08);
+  background-color: #f4f4f4;
+}
+
+h1, h2, h3, h4 {
+  font-family: galano;
+}
+
+.page-title {
+  font-weight: bold;
+  font-family: galano;
+  color: white;
+}

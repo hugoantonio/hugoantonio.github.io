@@ -1,9 +1,74 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-header no-border>
+  <div class="main-header">
+    <ion-icon class="icon-back" name="arrow-back"></ion-icon>
+    <h2 class="page-title"> Card Payment </h2>
+  </div>
+  <div class="sub-header">
+    <span class="description-text">Food and drink</span>
+    <img class="description-image" src="../../assets/images/starbucks.png">
+  </div>
+  </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <div class="payment-details">
+      <img class="payment-details__party-image" src="../../assets/images/starbucks.png">
+      <h2 class="payment-details__party">Starbucks</h2>
+      <p class="payment-details__date">Tuesday, 5. Dec 2018 20:32</p>
+      <p class="payment-details__address">Europa Allee 7, 8004 Zurich, Schweiz</p>
+      <span class="payment-details__ammount">CHF -<span [innerHtml]="'13.99' | boldCurrency"></span></span>
+  </div>
+
+  <div class="neon-separator"></div>
+
+  <ion-list class="payment-options">
+    <ion-item>
+      <div class="combined">
+        <ion-icon name="pricetag"></ion-icon>
+        <p>Add tag</p>
+      </div>
+      <div class="icon-only">
+        <ion-icon name="create"></ion-icon>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="combined">
+        <ion-icon name="card"></ion-icon>
+        <p>Debit note</p>
+      </div>
+      <div class="icon-only">
+        <ion-icon name="open"></ion-icon>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="combined">
+        <ion-icon name="camera"></ion-icon>
+        <p>Add picture</p>
+      </div>
+      <div class="icon-only">
+        <ion-icon name="add"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <div class="neon-separator"></div>
+
+  <div class="statistics">
+
+    <h3 class="statistics__title">Statistics</h3>
+
+    <div class="columns">
+      <div class="column">
+        <h3>5</h3>
+        <p>Payments last 12 months</p>
+      </div>
+      <div class="divider"></div>
+      <div class="column">
+        <h3 [innerHtml]="'25.15' | boldCurrency"></h3>
+        <p>CHF paid in average</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="neon-separator"></div>
+
+</ion-content>

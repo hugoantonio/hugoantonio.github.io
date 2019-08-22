@@ -1,9 +1,72 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
+<ion-header no-border>
+  <div class="main-header">
+    <span class="page-title">Kontostand</span>
+    <span>
+      CHF <span><b>3'149.</b>98</span>
+    </span>
+  </div>
+  <div class="search-box">
+    <ion-searchbar placeholder="Suchen"></ion-searchbar>
+  </div>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content no-bounce>
+    <ion-list lines="none">
+        <p class="interval-title">Zukunftige</p>
+        <ion-item-sliding *ngFor="let movement of futureMovements">
+          <ion-item>
+            <ion-label>
+              <div class="movement-details-left">
+                <img class="party-image" src="../../assets/images/starbucks.png"/>
+                <div class="text-details">
+                  <h2 class="text-details__party">{{movement.party}}</h2>
+                  <p class="text-details__date">{{movement.date}}</p>
+                </div>
+              </div>
+              <div class="movement-details-right">
+                <span *ngIf="!movement.inc">-</span>
+                <span [innerHtml]="movement.value | boldCurrency"></span>
+              </div>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option (click)="unread(item)">Delete</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>
+
+<ion-bottom-drawer [(state)]="drawerState" [minimumHeight]="minimumHeight" [dockedHeight]="dockedHeight"
+  [shouldBounce]="shouldBounce" [distanceTop]="distanceTop">
+  <div class="drawer-content">
+
+    <div class="neon-handle"></div>
+
+    <ion-list lines="none" *ngFor="let interval of intervals">
+      <p class="interval-title">{{interval.name}}</p>
+      <ion-item-sliding *ngFor="let movement of movements">
+        <ng-container *ngIf="movement.date === interval.date">
+            <ion-item>
+              <ion-label>
+                <div class="movement-details-left">
+                  <img class="party-image" src="../../assets/images/starbucks.png"/>
+                  <div class="text-details">
+                    <h2 class="text-details__party">{{movement.party}}</h2>
+                    <p class="text-details__date">{{movement.date}}</p>
+                  </div>
+                </div>
+                <div class="movement-details-right">
+                  <span *ngIf="!movement.inc">-</span>
+                  <span [innerHtml]="movement.value | boldCurrency"></span>
+                </div>
+              </ion-label>
+            </ion-item>
+            <ion-item-options side="end">
+              <ion-item-option (click)="unread(item)">Delete</ion-item-option>
+            </ion-item-options>
+          </ng-container>
+      </ion-item-sliding>
+    </ion-list>
+
+  </div>
+</ion-bottom-drawer>
