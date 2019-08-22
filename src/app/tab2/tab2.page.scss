@@ -31,7 +31,11 @@ ion-header {
                 left: 0 !important;
                 width: 16px;
             }
+            .sc-ion-searchbar-md {
+                box-shadow: none !important
+            }
         }
+
     }
 }
 
