@@ -1,5 +1,5 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { BoldCurrencyPipe } from './pipes/BoldCurrencyPipe';
+import { BoldCurrencyPipe } from './pipes/boldCurrencyPipe';
 
 @NgModule({
     imports: [],
